@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(#480d35, #17151d);
+        }
+        .box {
+            position: relative;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            z-index: 1;
+        }
+        .box .card {
+            position: relative;
+            background: #ffffff12;
+            width: 300px;
+            min-height: 400px;
+            backdrop-filter: blur(10px);
+            border: 0.5px solid #ffffff26;
+            border-radius: 20px;
+            box-shadow: 0 25px 45px #0000000d;
+            z-index: 0;
+        }
+        .elements {
+            position: absolute;
+            top: 100px;
+            left: 25px;
+            width: 250px;
+            height: auto;
+            border-radius: 5px;
+            text-align: center;
+            background: transparent;
+            transform: translateZ(80px);
+            z-index: 2;
+        }
+        .elements h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #f6d8d5;
+            text-transform: uppercase;
+        }
+        .elements p {
+            font-size: 1.5rem;
+            color: #b393d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="elements">
+            <h2>Hello!</h2>
+            <p>I'm a 3D card</p>
+        </div>
+        <div class="card">
+        </div>
+    </div>
+    <script>
+        VanillaTilt.init(document.querySelector(".box"), {
+            max: 10,
+            speed: 250,
+            easing: "cubic-bezier(.03,.98,.52,.99)",
+            reverse: true,
+            glare: true,
+            "max-glare": 0.1,
+        });
+    </script>
+</body>
+</html>
